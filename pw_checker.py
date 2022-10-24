@@ -1,3 +1,59 @@
+"""
+================
+PASSWORD CHECKER
+================
+
+This a small programme that verify if the password informed has been leaked using 
+Pwned Passwords v2 API. The data is K-anonymized before sending to the API, so plaintext 
+passwords never leave your computer.
+
+-Code below will ask you for a password. 
+-The input will be collected using `getpass` 
+-Then the data will be hashed using SHA1 
+-The first five characters of hash will be sending to pwnedpassword.com
+-API will return the number of times the information was leaked or if never was.
+
+
+To run file: $python pw_checker.py
+
+_________________________________________________
+Exemple if the password has been leaked:
+    $python pw_checker.py
+    Password: testpassword123 (password won`t apper because getpass)
+
+SHA1: FIRSTS5_CHARS | REST_CHARS
+C1800 | 6FC138809314751CD1991F1E0B820FABD37
+
+Output:
+    FOR PASSWORD: te***********23
+    Bad news! This password has been seen 36 times before. If you've ever used it anywhere before, change it!
+------------------------------------------------
+Exemple if the password never was leaked:
+    $python pw_checker.py
+    Password: pythonisthebest (password won`t apper because getpass)
+
+SHA1 TO testpassword123: FIRSTS5_CHARS | REST_CHARS
+1A924 | 66305BB1710E4DFB5DB1EC12753E6FF238A
+
+ Output:
+    FOR PASSWORD: py***********st
+    Good news! no leaks found. Carry on!
+__________________________________________________
+
+Author: Luan Leone
+License: MIT
+
+References:
+  - https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/
+  - https://docs.python.org/3.7/library/getpass.html
+  - https://github.com/lionheart/pwnedpasswords
+
+
+"""
+
+
+
+
 import requests
 import getpass
 import hashlib
