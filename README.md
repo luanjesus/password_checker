@@ -2,7 +2,7 @@
 
 
 This a small programme that verify if the password informed has been leaked using 
-Pwned Passwords v2 API. The data is K-anonymized before sending to the API, so plaintext 
+Pwned Passwords v2 API. The data is [K-anonymized](https://en.wikipedia.org/wiki/K-anonymity) before sending to the API, so plaintext 
 passwords never leave your computer.
 
 - Code below will ask you for a password. 
